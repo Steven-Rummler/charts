@@ -1,8 +1,6 @@
-export default async function Chart(props: unknown) {
-  if (typeof props !== 'object' || props === null) return chartNotFound;
-  if (!('params' in props) || typeof props.params !== 'object' || props.params === null) return chartNotFound;
-  if (!('chart' in props.params) || typeof props.params.chart !== 'string') return chartNotFound;
-  const url = `${process.env.VERCEL_URL}/api/charts/${props.params.chart}`;
+export default async function Chart({ params }: { params: { chart: string } }) {
+  const { chart } = params;
+  const url = `${process.env.VERCEL_URL}/api/charts/${chart}`;
 
   try {
     const result = await fetch(url);
