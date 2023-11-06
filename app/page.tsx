@@ -1,4 +1,4 @@
-import { AddChartButton } from "./AddChartButton";
+import { ChartOptionsForm } from "./ChartOptionsForm";
 
 export default async function Home() {
   try {
@@ -12,6 +12,6 @@ export default async function Home() {
 
   return <main>
     <h1>Embedded Chart Builder</h1>
-    <AddChartButton />
+    <ChartOptionsForm />
   </main>;
 }
